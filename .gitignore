@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+
+# Vite build output
+dist/
+
+# Logs
+*.log
+logs/
+
+# Dependency directories
+.pnpm/
+.npm/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+
+# Next.js build output
+.next/
+
+# Storybook build output
+storybook-static/
+
+# Yarn and package lock files
+yarn.lock
+package-lock.json
+
+# TypeScript output
+*.tsbuildinfo
