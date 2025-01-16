@@ -1,3 +1,3 @@
 export default class Config {
-  static BACKEND_URL = process.env.BACKEND_URL;
+  static BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 }
