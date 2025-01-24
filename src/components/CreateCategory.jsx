@@ -31,11 +31,9 @@ export function CreateCategory() {
     };
     return (
         <form onSubmit={handleSubmitValue}>
-            <input type="text" name="name" id="catName"
-                onChange={handleInputChange} />
+            <input type="text" name="name" id="catName" onChange={handleInputChange} />
             <button type="submit">enviar</button>
         </form>
     )
 
 }
-export default CreateCategory

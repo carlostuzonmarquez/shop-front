@@ -1,15 +1,11 @@
 import './App.css'
-import CreateCategory from './components/CreateCategory'
-import { EditCategory } from './components/editCategory'
-import { ListCategories } from './components/ListCategories'
-
+import { EditProduct } from './components/EditProduct'
 function App() {
 
   return (
     <>
-      <CreateCategory />
-      <ListCategories />
-      <EditCategory />
+      <EditProduct />
+
     </>
   )
 }
