@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Config from "../Config"
 import { useCategories } from "../hooks/useCategories"
 
-export function CreateProduct() {
+export default function CreateProductPage() {
     const [product, setProduct] = useState({
         name: '',
         stock: '',

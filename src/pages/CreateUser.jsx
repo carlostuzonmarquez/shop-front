@@ -1,9 +1,11 @@
 import { useState } from "react"
 import Config from "../Config"
+import { useNavigate } from "react-router-dom"
 
-export function CreateUser() {
+export default function CreateUserPage() {
     const [user, setUser] = useState('')
     const [password, setPassword] = useState('')
+    const navigate = useNavigate()
 
     const handleUser = (event) => {
         setUser(event.target.value)
@@ -21,8 +23,8 @@ export function CreateUser() {
             },
             body: JSON.stringify({ username: user, password: password }),
         })
-        setUser('')
-        setPassword('')
+        console.log(response)
+        navigate('/users')
     }
     return (
         <form onSubmit={handleUserSubmit}>

@@ -1,12 +1,23 @@
-export function Product({ id, name, handleDelete }) {
-    return (
+import { DeleteIcon, EditIcon } from "./Icons";
 
-        <li >{name}
-            <button onClick={() => {
-                handleDelete(id)
-            }}>borrar</button>
-            <button>editar</button>
-        </li>
+export function Product({ id, name, price, handleDelete }) {
+    return (
+        <tr>
+            <td>{id}</td>
+            <td>{name}</td>
+            <td>{price}</td>
+            <td className="controls">
+                <EditIcon />
+                <DeleteIcon />
+            </td>
+            {/* <li >{name}
+                <button onClick={() => {
+                    handleDelete(id)
+                }}>borrar</button>
+                <button>editar</button>
+            </li> */}
+        </tr>
+
 
     )
 }
