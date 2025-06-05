@@ -43,7 +43,7 @@ input:focus {
 button {
   background-color: #3a3f5c;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 5px 11px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -104,9 +104,7 @@ aside {
   padding: 20px;
   height: 100vh;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  top: 0;
-  left: 0;
+
   border-right-color: #e0e0e0;
   border-right-width: 1px;
   border-right-style: solid;
@@ -135,7 +133,7 @@ aside ul li a:hover {
 }
 
 /* Contenido principal */
-main {
+/* main {
   flex-grow: 1;
   padding: 20px;
   margin-left: 40px;
@@ -145,7 +143,7 @@ main {
   right: 0;
   height: 100vh;
   overflow-y: auto;
-}
+} */
 
 a {
   color: inherit;
@@ -168,4 +166,131 @@ a {
 
 .button:active {
   background-color: #2a2f4a;
+}
+
+.form-group ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espacio entre los elementos */
+  justify-content: center;
+}
+.form {
+  display: flex;
+}
+
+.form-group li {
+  width: 40%;
+}
+
+.form-group input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.form-group label {
+  color: black;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.primerProduct {
+  width: 50%;
+}
+
+.segundoProduct {
+  width: 50%;
+  margin: 70px;
+}
+
+main.panel {
+  display: flex;
+  justify-content: center;
+}
+/*  */
+.amount {
+  display: flex;
+}
+
+@media (max-width: 480px) {
+  /* Estilos para teléfonos pequeños */
+  .form {
+    width: 85%;
+  }
+  .search-bar {
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    top: 63px;
+  }
+  nav {
+    display: 0;
+  }
+  .user-actions {
+    justify-content: flex-end;
+  }
+  .filters {
+    flex-direction: column;
+  }
+  .slider {
+    height: 77vh;
+  }
+  .product-detail {
+    flex-direction: column;
+    gap: 0;
+  }
+  h1,
+  p {
+    font-size: 12px;
+  }
+  .cart-items li {
+    flex-direction: column;
+  }
+  .cart-items li img {
+    width: 100px;
+  }
+  .product-info .price {
+    margin-bottom: 2px;
+  }
+  .product-info .description {
+    margin: 0;
+  }
+  select {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  /* Estilos para celulares y tablets en vertical */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .icon-button {
+    display: none; /* Ocultamos el icono en escritorio */
+  }
+  .slider {
+    height: 87vh;
+  }
+  .footer {
+    position: relative;
+    top: 740px;
+  }
+  button {
+    font-size: 18px;
+  }
+  p,
+  span,
+  h3 {
+    font-size: 17px;
+  }
+  select {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1025px) {
+  /* Estilos para pantallas grandes */
+  .cart-items li {
+    flex-direction: column;
+  }
+  .cart-items li img {
+    width: 100px;
+  }
 }

@@ -1,0 +1,78 @@
+header {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.logo a span {
+  color: #17a2b8;
+}
+
+.user-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 382px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.search-bar input {
+  border: none;
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+  flex: 1;
+}
+
+.search-bar button {
+  background-color: #17a2b8;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #138496;
+}
+
+.login-icon,
+.cart-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.login-icon:hover,
+.cart-icon:hover {
+  color: #17a2b8;
+}
+.error {
+  font-size: 14px;
+}

@@ -1,0 +1,83 @@
+.idContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.idCompra {
+  display: flex;
+  gap: 40px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 1.1);
+  max-width: 1000px;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.idPersona {
+  flex: 2;
+}
+
+.idPersona h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #222;
+}
+
+.idPersona p {
+  margin: 10px 0 5px;
+}
+
+.idPersona input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+span {
+  margin-top: 20px;
+}
+
+.idPersona form > div {
+  margin: 15px 0;
+  display: flex;
+  gap: 20px;
+}
+
+.idPersona button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #d0021b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.idPersona button:hover {
+  background-color: #a70016;
+}
+
+.idDetallesCompra {
+  flex: 1;
+  border-left: 1px solid #ddd;
+  padding-left: 30px;
+}
+
+.idDetallesCompra h2 {
+  margin-bottom: 20px;
+}
+
+.idDetallesCompra img {
+  width: 100px;
+  height: 100px;
+}
+
+.idDetallesCompra p {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 18px;
+}

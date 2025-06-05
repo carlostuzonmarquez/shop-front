@@ -1,12 +1,11 @@
-import { useState } from "react"
-import { fetchProducts } from "../services/fetchProducts"
+import { useState } from "react";
+import { fetchProducts } from "../services/fetchProducts";
 
-export function useProducts() {
-    const [products, setProducts] = useState([])
+export default function useProducts() {
+  const [products, setProducts] = useState([]);
+  const getProducts = async () => {
+    setProducts(await fetchProducts());
+  };
 
-    const getProducts = async () => {
-        setProducts(await fetchProducts())
-    }
-
-    return { products, setProducts, getProducts }
+  return { products, setProducts, getProducts };
 }

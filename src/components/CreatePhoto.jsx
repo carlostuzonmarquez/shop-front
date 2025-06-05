@@ -1,37 +1,51 @@
-import { useState } from "react"
-import Config from "../Config"
+import { useState } from "react";
+import Config from "../Config";
+import axios from "axios";
+import { DeleteIcon, DeleteXIcons } from "./Icons";
 
-export function CreatePhoto() {
-    const [photo, setPhoto] = useState(null)
-    const [preview, setPreview] = useState(null)
-    const handlePhotochange = (event) => {
-        let file = event.target.files[0]
-        setPhoto(file)
-        // const previewUrl = URL.createObjectURL(file);
-        // setPreview(previewUrl);
+export default function CreatePhoto({ productId = null, handleNewPhoto }) {
+  const [preview, setPreview] = useState("https://placehold.co/100");
+
+  const handlePhotochange = (event) => {
+    let file = event.target.files[0];
+    const formData = new FormData();
+    formData.append("file", file);
+    if (productId !== null) {
+      formData.append("productId", productId);
     }
+    axios
+      .post(Config.BACKEND_URL + "photo", formData, {
+        "Content-type": "multipart/form-data",
+      })
+      .then((res) => {
+        setPreview(res.data.preview);
+        handleNewPhoto(res.data.filename);
+      });
+  };
+  const handleDelete = () => {
+    setPreview(null);
+  };
+  return (
+    <>
+      <img src={preview} alt="" />
+      <label>Seleccionar Imagen:</label>
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handlePhotochange}
+        style={{ display: "none" }}
+      />
 
-    const handleSubmitValue = async (event) => {
-        event.preventDefault();
-        const formData = new FormData()
-        formData.append('file', photo)
-        const response = await fetch(Config.BACKEND_URL + 'photo/25', {
-            method: 'POST',
-            body: formData,
-        })
-        const result = await response.json();
-        setPreview(result.photo)
-        console.log(result.photo)
-    }
-    return (
-        <>
-            <img src={preview} alt="" />
-            <form onSubmit={handleSubmitValue}>
-                <label>Seleccionar Imagen:</label>
-                <input type="file" accept="image/*" onChange={handlePhotochange} />
-
-                <button type="supmit">subir Imagen</button>
-            </form>
-        </>
-    )
+      <button
+        onClick={(e) => {
+          e.target.previousElementSibling.click();
+        }}
+      >
+        subir Imagen
+      </button>
+      <button onClick={handleDelete}>
+        <DeleteIcon />
+      </button>
+    </>
+  );
 }

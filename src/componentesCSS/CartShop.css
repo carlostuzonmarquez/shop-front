@@ -1,0 +1,103 @@
+.fixed-cart-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #17a2b8; /* Azul turquesa para el botÃ³n */
+  color: #ffffff; /* Blanco para el Ã­cono */
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.fixed-cart-icon:hover {
+  background-color: #138496; /* Azul turquesa mÃ¡s oscuro al pasar el mouse */
+}
+
+/* Carrito de Compras */
+.cart-dropdown {
+  position: fixed;
+  top: 70px;
+  right: -340px;
+  width: 300px;
+  background-color: #ffffff; /* Blanco para el fondo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.cart-dropdown.active {
+  right: 20px;
+}
+
+.cart-dropdown h2 {
+  margin-top: 0;
+  color: #343a40; /* Gris oscuro para el tÃ­tulo */
+  font-size: 20px;
+  border-bottom: 1px solid #ecf0f1; /* Gris claro para la lÃ­nea */
+  padding-bottom: 10px;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.cart-items li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ecf0f1; /* Gris claro para las lÃ­neas */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-items li:last-child {
+  border-bottom: none;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ecf0f1; /* Gris claro para la lÃ­nea */
+  font-size: 18px;
+  font-weight: bold;
+  color: #343a40; /* Gris oscuro para el texto */
+}
+
+.checkout-btn {
+  background-color: #17a2b8; /* Azul turquesa para el botÃ³n */
+  color: #ffffff; /* Blanco para el texto */
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.checkout-btn:hover {
+  background-color: #138496; /* Azul turquesa mÃ¡s oscuro al pasar el mouse */
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #17a2b8; /* Azul turquesa para el contador */
+  color: #ffffff; /* Blanco para el nÃºmero */
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+}

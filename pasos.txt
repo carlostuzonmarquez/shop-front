@@ -1,0 +1,107 @@
+
+// primero crear las los productos las categorias cualquiero formulario que se necesite para el trabajo en html y en ccs con react
+	npm vite@latest 
+
+// 2.añadir la base de datos mongo nc que y el prisma 
+	2.1 npx prisma migrate dev // para migrar la nueva tabla a la base de ddatos
+
+//3.luego crear o utilizar el node para crear los controladores y los servidores
+	// 3.1.para el primer formulario tendremos que crear el primer crud deloque hagamos y crearlo desde la parde del back con
+	//crear controladores modulos y servicios en nest
+	nest g module product
+	nest g controller product
+	nest g service product
+
+	//3.2antes de crear el crud para cada formulario tendremos que crear el Dto
+	luego se empiesa por crear el Post:crear ,Get:Listar ,Delete:eliminar ,Patch :editar 
+
+	//3.3para luego seguir con el servicio creando funciones para cada controlador
+	en el module siempre se tiene que llamar al prismaService
+
+
+
+//4.aqui tendremos que crear en react componentes para cada crud como para crear actualizar editar eliminar 
+	tendremos que llamar a la párde de los cotroladores del back con un fetch y crear cada funcion segun sea requerida 
+	
+	
+	
+//6.Axios en react
+	axios es una libreria para hacer solicitudes HTTP en javascript y maneja peticiones de forma sencilla
+	.npm install axios
+
+	METODO						DESCRIPCION
+	axios.get(url)					Obtiene datos
+	axios.post(url, data)			Envía datos (crear)
+	axios.put(url, data)			Modifica un dato completo
+	axios.patch(url, data)			Modifica parcialmente un dato
+	axios.delete(url)				Elimina un dato
+
+
+//parte del photo con el producto
+2.boton para añdair fotos
+	2.1.1sacar el numero de elementos de un array
+	2.1.3 crear nuevo array con los elementos que ya tiene y añadirle el nuevo componente photo
+	2.1.2 añadirle 1 y meterlo como key
+
+	2.1.4 actualizar el valor del estado photoComponent
+	2.1.5 almasenar los componentes de las fotos en un estado
+
+3.arreglas el componente de crear foto para que cuando se seleccione la foto se suba
+4.guardadr el nombre de las fotos en un estado
+5.cuando se hace la peticion para guardar el producto mandar las fostos tambien
+
+
+
+//carrito
+USECONTEXT()
+Si queremos usar useContext, primero debemos crear un contexto, luego proveerlo a los componentes, y finalmente consumirlo con useContext.
+
+
+
+
+//FILTROS filter() es un metodo que nos permite filtrar uh array //practicar para filtrar 0
+7.1 PRIMERO usamos un estado para guardar los filtros  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+estados de reaac
+1.useId(): es para tener un identificador unico
+2. useContext(): con esto se puede inyectar  informacion saltandote las props de los componentes
+
+
+
+al finalizar compra se tiene que basiar
+crear la pagina detalles 
+arreglar el editado de parte del servidor 
+me falta actulizar el stock al finalizar compra 
+
+quitar producto del carrito
+
+
+
+//Usestate[]
+este Usestate nosmirve pra guardar culaquier tipo de dato
+
+//uffect(()=>{})
+esto nos rive para que la funcion pueda ejecutarse dependiendo si es una o mas veces
+
+
+
+//subir fotos en backend
