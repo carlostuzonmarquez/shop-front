@@ -11,7 +11,7 @@ export default function ProductsProvider({ children }) {
   const [categoryCanonical, setCategoryCanonical] = useState(null);
   const [orderBy, setOrderBy] = useState(null);
   const getProducts = () => {
-    let path = "product/list/" + page;
+    let path = "search/product/list/" + page;
     if (categoryCanonical !== null) {
       path += "/" + categoryCanonical;
     }
@@ -30,7 +30,7 @@ export default function ProductsProvider({ children }) {
 
   useEffect(() => {
     getProducts();
-  }, [page, categoryCanonical, orderBy]);
+  }, [page]);
   return (
     <ProductsContext.Provider
       value={{

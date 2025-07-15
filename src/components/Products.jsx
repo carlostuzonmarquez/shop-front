@@ -10,6 +10,10 @@ import { Link } from "react-router-dom";
 export default function Products() {
   const { products } = useContext(ProductsContext);
   const { cart, addToCart, removeProductFromCart, isProductInCart } = useCart();
+   if (!products || products.length === 0) {
+    // Mostrar mensaje de carga o algún tipo de spinner mientras los productos están cargando
+    return <div>Loading products...</div>;
+  }
   return (
     <>
       <CartShop />
@@ -33,13 +37,13 @@ export default function Products() {
 
               <h3>{product.name}</h3>
               <p className="price">{product.price}</p>
-              {/* <p className="price">{product.stock}</p> */}
+          <p className="price">{product.stock}</p> 
 
               <p className="categories">
                 {product.ProductCategory.map((pc) => {
                   return <a key={pc.category.id}>{pc.category.name} </a>;
                 })}
-              </p>
+              </p> 
               <button
                 className="add-to-cart"
                 onClick={() => {

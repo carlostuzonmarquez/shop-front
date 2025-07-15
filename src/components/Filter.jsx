@@ -9,6 +9,7 @@ export default function Filter() {
   const [categories, setCategories] = useState([]);
   const getFilter = () => {
     axios.get(Config.BACKEND_URL + "category/list").then((res) => {
+      console.log(res.data)
       setCategories(res.data);
     });
   };
@@ -16,7 +17,6 @@ export default function Filter() {
   useEffect(() => {
     getFilter();
   }, []);
-
   return (
     <>
       <div className="filters">
