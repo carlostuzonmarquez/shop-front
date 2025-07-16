@@ -7,7 +7,6 @@ export default function Menu() {
           <Link to="/categories">Categorias</Link>
           <Link to="/products">products</Link>
           <Link to="/users">Users</Link>
-          <Link to="/provider">Provider</Link>
         </li>
       </ul>
     </aside>

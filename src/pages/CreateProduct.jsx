@@ -17,7 +17,7 @@ export default function CreateProductPage() {
     stock: "",
     description: "",
     price: "",
-  });
+  }); 
 
   const { getCategories, categories, setCategories } = useCategories();
 
@@ -68,20 +68,18 @@ export default function CreateProductPage() {
     let photoTotal = photosComponent.length;
     const newPhotoComponent = [
       ...photosComponent,
-      <CreatePhoto key={photoTotal + 1} handleNewPhoto={handleNewPhoto} />,
+      <CreatePhoto key={photoTotal + 1} setPhotos={setPhotos} photos={photos} componentIndex={photoTotal+1} setPhotoComponent={setPhotoComponent} photosComponent={photosComponent}/>,
     ];
     setPhotoComponent(newPhotoComponent);
   };
-  const handleNewPhoto = (photoName) => {
-    const newPhotoName = [...photos, photoName];
-    setPhotos(newPhotoName);
-  };
+
 
   useEffect(() => {
     getCategories();
   }, []);
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
+       <div className="contenedorPrincipal">
+
       <Menu />
       <main className="panel">
         <div

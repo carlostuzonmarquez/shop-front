@@ -12,7 +12,7 @@ export default function Photo({ id, path, photos, setPhotos }) {
 
   return (
     <>
-      <img src={Config.PHOTOS_URL + path} alt="" />
+      <img src={Config.PHOTOS_URL + path} alt="" style={{width:"200px"}}/>
       <button onClick={handleDeletePhotos}>
         <DeleteIcon />
       </button>

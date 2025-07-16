@@ -6,6 +6,5 @@ export default function useProducts() {
   const getProducts = async () => {
     setProducts(await fetchProducts());
   };
-
   return { products, setProducts, getProducts };
 }

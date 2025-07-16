@@ -20,9 +20,8 @@ export default function ListCategoriesPage() {
   useEffect(() => {
     getCategories();
   }, []);
-
   return (
-    <>
+    <div className="contenedorPrincipal">
       <Menu />
       <main className="panel">
         <div className="contenido">
@@ -55,6 +54,6 @@ export default function ListCategoriesPage() {
           </table>
         </div>
       </main>
-    </>
+    </div>
   );
 }

@@ -9,10 +9,7 @@ import CreateUserPage from "./pages/CreateUser";
 import EditUserPage from "./pages/EditUser";
 import EditCategoryPage from "./pages/EditCategory";
 import EditProductPage from "./pages/EditProduct";
-import CreateProviderPage from "./pages/CreateProvider";
-import ListProviderPage from "./pages/ListProvider";
 import Home from "./pages/Home";
-import EditProviderPage from "./pages/EditProvider";
 import Details from "./pages/Details";
 import CartProvider from "./context/CartContext";
 import ProductsProvider from "./context/ProductsContext";
@@ -44,12 +41,7 @@ function App() {
             <Route path="/create/users" element={<CreateUserPage />} />
             <Route path="/edit/user/:userId" element={<EditUserPage />} />
 
-            <Route path="/provider" element={<ListProviderPage />} />
-            <Route path="/provider/create" element={<CreateProviderPage />} />
-            <Route
-              path="/provider/edit/:idProvider"
-              element={<EditProviderPage />}
-            />
+            
 
             <Route path="/details/:id" element={<Details />} />
             <Route path="/order" element={<OrderPage />} />

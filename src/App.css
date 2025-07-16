@@ -206,12 +206,18 @@ a {
 main.panel {
   display: flex;
   justify-content: center;
+  width: 50%;
 }
 /*  */
 .amount {
   display: flex;
 }
-
+.contenedorPrincipal{
+  display: flex;
+}
+.contenido{
+  width: 500px;
+}
 @media (max-width: 480px) {
   /* Estilos para teléfonos pequeños */
   .form {

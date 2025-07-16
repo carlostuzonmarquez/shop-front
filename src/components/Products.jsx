@@ -28,9 +28,9 @@ export default function Products() {
               <Link to={`/details/${product.id}`}>
                 {product.Photos && product.Photos.length > 0 && (
                   <img
-                    src={Config.PHOTOS_URL + product.Photos[0].path}
+                    src={ product.Photos[0].path}
                     alt={product.name}
-                    style={{ width: "250px" }}
+                    style={{ width: "250px" ,height:"200px"}}
                   />
                 )}
               </Link>

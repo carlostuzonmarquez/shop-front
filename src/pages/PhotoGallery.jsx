@@ -28,7 +28,7 @@ export default function PhotoGallery({ photos }) {
           return (
             <img
               key={photo.id}
-              src={Config.PHOTOS_URL + photo.path}
+              src={ photo.path}
               alt="Miniatura 1"
               onClick={imageclick}
               className={index === 0 ? "active_image" : ""}

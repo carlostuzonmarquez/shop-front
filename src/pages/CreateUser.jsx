@@ -34,7 +34,8 @@ export default function CreateUserPage() {
       });
   };
   return (
-    <>
+           <div className="contenedorPrincipal">
+
       <Menu />
       <main className="panel">
         <div className="form-container">
@@ -55,6 +56,6 @@ export default function CreateUserPage() {
           </form>
         </div>
       </main>
-    </>
+    </div>
   );
 }

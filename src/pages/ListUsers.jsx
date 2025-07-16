@@ -20,7 +20,7 @@ export default function ListUsersPage() {
     getUsers();
   }, [location]);
   return (
-    <>
+    <div className="contenedorPrincipal">
       <Menu />
       <main className="panel">
         <div className="contenido">
@@ -50,6 +50,6 @@ export default function ListUsersPage() {
           </table>
         </div>
       </main>
-    </>
+    </div>
   );
 }

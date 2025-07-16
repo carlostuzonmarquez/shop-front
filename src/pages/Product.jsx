@@ -9,11 +9,16 @@ export default function Product({ product, handleDelete }) {
       <td>{product.name}</td>
       <td>{product.stock}</td>
       <td>{product.price}</td>
-      <td>{product.categories.join(", ")}</td>
+      <td> <ul>
+    {product.ProductCategory.map((categoriP, index) => (
+      <li key={`${product.id}-${categoriP.categoryId}-${index}`}>
+        {categoriP.category?.name || "Sin categoría"}
+      </li>
+    ))}
+  </ul></td>
       <td>
         {product.Photos && product.Photos.length > 0 && (
           <img
-            key={product.Photos[0].path}
             src={Config.PHOTOS_URL + product.Photos[0].path}
             style={{ width: "100px" }}
             alt={product.name}
