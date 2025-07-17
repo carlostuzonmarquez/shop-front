@@ -35,7 +35,7 @@ export default function EditCategoryPage() {
   }, []);
 
   return (
-    <>
+    <div className="contenedorPrincipal">
       <Menu />
       <main className="panel">
         <div className="form-container">
@@ -52,6 +52,6 @@ export default function EditCategoryPage() {
           </form>
         </div>
       </main>
-    </>
+    </div>
   );
 }

@@ -28,22 +28,21 @@ export default function Products() {
               <Link to={`/details/${product.id}`}>
                 {product.Photos && product.Photos.length > 0 && (
                   <img
-                    src={ product.Photos[0].path}
+                    src={ Config.BACKEND_URL+"uploads/" + product.Photos[0].path}
                     alt={product.name}
                     style={{ width: "250px" ,height:"200px"}}
                   />
                 )}
               </Link>
-
               <h3>{product.name}</h3>
               <p className="price">{product.price}</p>
-          <p className="price">{product.stock}</p> 
+          <p className="price">{product.stock}</p>
 
               <p className="categories">
                 {product.ProductCategory.map((pc) => {
                   return <a key={pc.category.id}>{pc.category.name} </a>;
                 })}
-              </p> 
+              </p>
               <button
                 className="add-to-cart"
                 onClick={() => {

@@ -42,7 +42,7 @@ export default function Details() {
           <p className="description">{details.description}</p>
           <div className="categories">
             <span>Categorías: </span>
-            {details.ProductCategory.map((category, index) => {
+            {details.ProductCategory.map((category) => {
               return (
                 <div key={category.category.id}>
                   <a href="">{category.category.name}</a>

@@ -36,7 +36,7 @@ export default function EditUserPage() {
     fetchUser();
   }, []);
   return (
-    <>
+    <div className="contenedorPrincipal">
       <Menu />
       <main className="panel">
         <div className="form-container">
@@ -64,6 +64,6 @@ export default function EditUserPage() {
           </form>
         </div>
       </main>
-    </>
+    </div>
   );
 }

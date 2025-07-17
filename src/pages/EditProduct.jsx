@@ -88,7 +88,7 @@ export default function EditProductPage() {
     getCategories();
   }, []);
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
+    <div className="contenedorPrincipal">
       <Menu />
       <main className="panel">
         <div className="form-container">

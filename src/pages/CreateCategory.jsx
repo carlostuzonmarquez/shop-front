@@ -26,8 +26,7 @@ export default function CreateCategoryPage() {
       });
   };
   return (
-        <div className="contenedorPrincipal">
-
+    <div className="contenedorPrincipal">
       <Menu />
       <main className="panel">
         <div className="form-container">
