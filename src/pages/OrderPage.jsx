@@ -28,7 +28,7 @@ export default function OrderPage() {
         <div className="idCompra">
           <div className="idPersona">
             <form onSubmit={handleSubir}>
-              <h2>Identificacion</h2>
+              <h1>Identificacion</h1>
 
               <div style={{ display: "flex", gap: "20px" }}>
                 <div>
@@ -60,7 +60,7 @@ export default function OrderPage() {
             </form>
           </div>
           <div className="idDetallesCompra" key={cart.id}>
-            <h2>Resumen de la compra</h2>
+            <h1>Resumen de la compra</h1>
             {cart.map((cart) => {
               return (
                 <div key={cart.id} className="detallesDate">
@@ -70,12 +70,10 @@ export default function OrderPage() {
                   />
                   <h2>{cart.name}</h2>
                   <span>{cart.price}Bs.</span>
-                  <p>
-                    <span>Total : {total.toFixed(2)}</span>
-                  </p>
                 </div>
               );
             })}
+            <h2 style={{ textAlign: "center" }}>Total : {total.toFixed(2)}</h2>
           </div>
         </div>
       </div>

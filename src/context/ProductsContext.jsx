@@ -30,7 +30,7 @@ export default function ProductsProvider({ children }) {
 
   useEffect(() => {
     getProducts();
-  }, [page]);
+  }, [page, categoryCanonical]);
   return (
     <ProductsContext.Provider
       value={{
