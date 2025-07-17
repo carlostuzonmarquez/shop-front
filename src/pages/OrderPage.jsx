@@ -1,14 +1,33 @@
+import { useContext, useEffect, useState } from "react";
 import "../componentesCSS/Order.css";
 import MenuHome from "../components/MenuHome";
+import useListProductId from "../services/useListProductId";
+import { useCart } from "../hooks/useCart";
+import Config from "../Config";
 
 export default function OrderPage() {
+  const { cart, clearCart } = useCart();
+  const [quantityState, setQuantityState] = useState(
+    cart.reduce((acc, item) => {
+      acc[item.id] = 1;
+      return acc;
+    }, {})
+  );
+  const total = cart.reduce((acc, item) => {
+    const quantity = quantityState[item.id] ?? 1;
+    return acc + item.price * quantity;
+  }, 0);
+
+  const handleSubir = () => {
+    alert("felicidades has comprado un producto");
+  };
   return (
     <>
       <MenuHome />
       <div className="idContainer">
         <div className="idCompra">
           <div className="idPersona">
-            <form>
+            <form onSubmit={handleSubir}>
               <h2>Identificacion</h2>
 
               <div style={{ display: "flex", gap: "20px" }}>
@@ -40,18 +59,23 @@ export default function OrderPage() {
               <button type="submit">Ir a pago</button>
             </form>
           </div>
-
-          <div className="idDetallesCompra">
+          <div className="idDetallesCompra" key={cart.id}>
             <h2>Resumen de la compra</h2>
-            <div>
-              <img src="https://placehold.co/100x100" alt="producto" />
-              <h2>Nombre del producto</h2>
-              <span>Bs.</span>
-              <p>
-                <span>Total</span>
-                <span>Bs.</span>
-              </p>
-            </div>
+            {cart.map((cart) => {
+              return (
+                <div key={cart.id} className="detallesDate">
+                  <img
+                    src={Config.PHOTOS_URL + cart.Photos[0].path}
+                    alt="producto"
+                  />
+                  <h2>{cart.name}</h2>
+                  <span>{cart.price}Bs.</span>
+                  <p>
+                    <span>Total : {total.toFixed(2)}</span>
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

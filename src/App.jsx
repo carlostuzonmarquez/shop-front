@@ -41,10 +41,8 @@ function App() {
             <Route path="/create/users" element={<CreateUserPage />} />
             <Route path="/edit/user/:userId" element={<EditUserPage />} />
 
-            
-
             <Route path="/details/:id" element={<Details />} />
-            <Route path="/order" element={<OrderPage />} />
+            <Route path="/order/:id" element={<OrderPage />} />
           </Routes>
         </Router>
       </CartProvider>

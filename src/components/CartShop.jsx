@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "../componentesCSS/CartShop.css";
 import Config from "../Config";
 import { useCart } from "../hooks/useCart";
@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 export default function CartShop() {
   const { cart, clearCart } = useCart();
-
   // Estado para manejar el stock de cada producto en el carrito
   const [quantityState, setQuantityState] = useState(
     cart.reduce((acc, item) => {
@@ -40,7 +39,6 @@ export default function CartShop() {
       [id]: newQuantity, // Actualiza solo el producto con el id específico
     }));
   };
-
   return (
     <>
       <div
@@ -91,7 +89,7 @@ export default function CartShop() {
           <span>Total:</span>
           <span className="total-price">${total.toFixed(2)}</span>
         </div>
-        <Link to={`/order`}>
+        <Link to={`/order/${cart.id}`}>
           <button
             className="checkout-btn"
             onClick={() => {

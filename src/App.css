@@ -212,10 +212,10 @@ main.panel {
 .amount {
   display: flex;
 }
-.contenedorPrincipal{
+.contenedorPrincipal {
   display: flex;
 }
-.contenido{
+.contenido {
   width: 500px;
 }
 @media (max-width: 480px) {
@@ -263,6 +263,13 @@ main.panel {
   }
   select {
     font-size: 16px;
+  }
+  .idCompra {
+    box-shadow: none !important;
+    padding: 0;
+  }
+  .detallesDate {
+    flex-direction: column;
   }
 }
 @media (max-width: 767px) {

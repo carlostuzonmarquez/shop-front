@@ -1,27 +1,18 @@
-import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import Config from "../Config";
-import { useParams } from "react-router-dom";
 import PhotoGallery from "./PhotoGallery";
 import CartShop from "../components/CartShop";
 import { useCart } from "../hooks/useCart";
 import { ProductsContext } from "../context/ProductsContext";
 import MenuHome from "../components/MenuHome";
+import useListProductId from "../services/useListProductId";
 export default function Details() {
-  const { id } = useParams();
-  const [details, setDetails] = useState(null);
+  const { loadDetails, details } = useListProductId();
+
   //esto es parte del producto
   const { products } = useContext(ProductsContext);
   const { cart, addToCart, removeProductFromCart } = useCart();
-  const loadDetails = () => {
-    axios.get(Config.BACKEND_URL + "product/" + id).then((res) => {
-      setDetails(res.data);
-    });
-  };
-  useEffect(() => {
-    loadDetails();
-  }, []);
 
+  console.log(details);
   if (!details) {
     return <p>Cargando detalles...</p>;
   }
@@ -38,7 +29,7 @@ export default function Details() {
         {/* <!-- Detalles del Producto --> */}
         <div className="product-info">
           <h1>{details.name}</h1>
-          <p className="price">{details.price}</p>
+          <p className="price">{details.price}bs</p>
           <p className="description">{details.description}</p>
           <div className="categories">
             <span>Categorías: </span>
@@ -46,7 +37,6 @@ export default function Details() {
               return (
                 <div key={category.category.id}>
                   <a href="">{category.category.name}</a>
-                  {index !== details.ProductCategory.length - 1 ? "," : ""}
                 </div>
               );
             })}
