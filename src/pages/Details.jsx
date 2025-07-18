@@ -29,17 +29,19 @@ export default function Details() {
         {/* <!-- Detalles del Producto --> */}
         <div className="product-info">
           <h1>{details.name}</h1>
-          <p className="price">{details.price}bs</p>
-          <p className="description">{details.description}</p>
+          <p className="price">Precio : {details.price}bs</p>
+          <p className="description">detalles : {details.description}</p>
           <div className="categories">
-            <span>Categorías: </span>
-            {details.ProductCategory.map((category) => {
-              return (
-                <div key={category.category.id}>
-                  <a href="">{category.category.name}</a>
-                </div>
-              );
-            })}
+            <p>
+              Categorías:
+              {details.ProductCategory.map((category) => {
+                return (
+                  <div key={category.category.id}>
+                    <a href="">{category.category.name}</a>
+                  </div>
+                );
+              })}
+            </p>
           </div>
           <button
             className="add-to-cart"

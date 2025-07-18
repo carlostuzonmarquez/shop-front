@@ -68,8 +68,8 @@ export default function OrderPage() {
                     src={Config.PHOTOS_URL + cart.Photos[0].path}
                     alt="producto"
                   />
-                  <h2>{cart.name}</h2>
-                  <span>{cart.price}Bs.</span>
+                  <h3>{cart.name}</h3>
+                  <h3>Precio : {cart.price}Bs.</h3>
                 </div>
               );
             })}

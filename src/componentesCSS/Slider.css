@@ -8,6 +8,8 @@ Estilos para el Banner o Slider .banner {
 .slider {
   display: flex;
   transition: transform 0.5s ease;
+  width: 2000px;
+  height: 800px;
 }
 
 .slider img {

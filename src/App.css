@@ -10,8 +10,11 @@ h2 {
   color: #1d1d1d;
   margin-bottom: 1.8rem;
   text-align: center;
+  font-size: 15px;
 }
-
+h3 {
+  font-size: 13px;
+}
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -247,7 +250,7 @@ main.panel {
   }
   h1,
   p {
-    font-size: 12px;
+    font-size: 20px;
   }
   .cart-items li {
     flex-direction: column;
@@ -268,8 +271,13 @@ main.panel {
     box-shadow: none !important;
     padding: 0;
   }
+
   .detallesDate {
     flex-direction: column;
+  }
+  .slider {
+    width: 100% !important;
+    height: 550px !important;
   }
 }
 @media (max-width: 767px) {
