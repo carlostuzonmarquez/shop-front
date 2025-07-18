@@ -6,7 +6,7 @@ import Config from "../Config";
 import { ProductsContext } from "../context/ProductsContext";
 
 export default function MenuHome() {
-  const { setProducts } = useContext(ProductsContext);
+  const { page, setProducts, setTotalPages } = useContext(ProductsContext);
   const [word, setWord] = useState("");
   const [error, setError] = useState("");
   const [showForm, showFormSet] = useState(false);
@@ -19,9 +19,12 @@ export default function MenuHome() {
   });
   const searchProduct = () => {
     if (word !== "") {
-      axios.get(Config.BACKEND_URL + "product/search/" + word).then((res) => {
-        setProducts(res.data);
-      });
+      axios
+        .get(Config.BACKEND_URL + "search/product/" + page + "/" + word)
+        .then((res) => {
+          setProducts(res.data.products);
+          setTotalPages(res.data.totalPages);
+        });
     }
   };
 
@@ -37,7 +40,7 @@ export default function MenuHome() {
   const handleChange = (event) => {
     let searchWord = event.target.value;
     if (searchWord === " ") {
-      setError("no se puede buscar una pelicula basia");
+      setError("no se puede buscar el producto");
       return;
     }
 

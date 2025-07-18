@@ -30,7 +30,7 @@ export default function ProductsProvider({ children }) {
 
   useEffect(() => {
     getProducts();
-  }, [page, categoryCanonical]);
+  }, [page, categoryCanonical, orderBy]);
   return (
     <ProductsContext.Provider
       value={{
@@ -41,6 +41,7 @@ export default function ProductsProvider({ children }) {
         setPage,
         setOrderBy,
         totalPages,
+        setTotalPages,
       }}
     >
       {children}

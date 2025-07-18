@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import "../componentesCSS/Slider.css";
+import redImage from "../assets/red.jpg";
 
-const desktopImages = [
-  "https://placehold.co/1200x401",
-  "https://placehold.co/1200x402",
-  "https://placehold.co/1200x403",
-];
+const desktopImages = [redImage];
 
 const mobileImages = [
   "https://placehold.co/300x403",
