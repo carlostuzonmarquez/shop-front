@@ -21,11 +21,19 @@ export default function OrderPage() {
   const handleSubir = () => {
     alert("felicidades has comprado un producto");
   };
+  const volverAtras = () => {
+    window.history.back();
+  };
   return (
     <>
       <MenuHome />
       <div className="idContainer">
         <div className="idCompra">
+          <div style={{ marginLeft: "30px" }}>
+            <a className="return " onClick={volverAtras}>
+              <span>Atras</span>
+            </a>
+          </div>
           <div className="idPersona">
             <form onSubmit={handleSubir}>
               <h1>Identificacion</h1>

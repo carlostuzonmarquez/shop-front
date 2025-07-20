@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export default function Products() {
   const { products } = useContext(ProductsContext);
   const { cart, addToCart, removeProductFromCart, isProductInCart } = useCart();
-   if (!products || products.length === 0) {
+  if (!products || products.length === 0) {
     // Mostrar mensaje de carga o algún tipo de spinner mientras los productos están cargando
     return <div>Loading products...</div>;
   }
@@ -28,18 +28,20 @@ export default function Products() {
               <Link to={`/details/${product.id}`}>
                 {product.Photos && product.Photos.length > 0 && (
                   <img
-                    src={ Config.BACKEND_URL+"uploads/" + product.Photos[0].path}
+                    src={
+                      Config.BACKEND_URL + "uploads/" + product.Photos[0].path
+                    }
                     alt={product.name}
-                    style={{ width: "250px" ,height:"200px"}}
+                    style={{ width: "250px", height: "200px" }}
                   />
                 )}
               </Link>
               <h3>{product.name}</h3>
               <p className="price">{product.price}</p>
-          <p className="price">{product.stock}</p>
+              <p className="price">{product.stock}</p>
 
               <p className="categories">
-                {product.ProductCategory.map((pc) => {
+                {product.productCategory.map((pc) => {
                   return <a key={pc.category.id}>{pc.category.name} </a>;
                 })}
               </p>

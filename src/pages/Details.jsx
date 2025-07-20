@@ -12,13 +12,14 @@ export default function Details() {
   const { products } = useContext(ProductsContext);
   const { cart, addToCart, removeProductFromCart } = useCart();
 
-  console.log(details);
   if (!details) {
     return <p>Cargando detalles...</p>;
   }
   const product = products.find((p) => p.id === details.id);
   const isInCart = cart.some((item) => item.id === details.id);
-
+  const volverAtras = () => {
+    window.history.back();
+  };
   return (
     <>
       <MenuHome />
@@ -34,7 +35,7 @@ export default function Details() {
           <div className="categories">
             <p>
               Categorías:
-              {details.ProductCategory.map((category) => {
+              {details.productCategory.map((category) => {
                 return (
                   <div key={category.category.id}>
                     <a href="">{category.category.name}</a>
@@ -53,6 +54,11 @@ export default function Details() {
           </button>
         </div>
       </main>
+      <div style={{ marginLeft: "30px" }}>
+        <a className="return " onClick={volverAtras}>
+          <span>Atras</span>
+        </a>
+      </div>
     </>
   );
 }

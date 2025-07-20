@@ -9,13 +9,15 @@ export default function Product({ product, handleDelete }) {
       <td>{product.name}</td>
       <td>{product.stock}</td>
       <td>{product.price}</td>
-      <td> <ul>
-    {product.ProductCategory.map((categoriP, index) => (
-      <li key={`${product.id}-${categoriP.categoryId}-${index}`}>
-        {categoriP.category?.name || "Sin categoría"}
-      </li>
-    ))}
-  </ul></td>
+      <td>
+        <ul>
+          {product.productCategory.map((categoriP, index) => (
+            <li key={`${product.id}-${categoriP.categoryId}-${index}`}>
+              {categoriP.category?.name || "Sin categoría"}
+            </li>
+          ))}
+        </ul>
+      </td>
       <td>
         {product.Photos && product.Photos.length > 0 && (
           <img
