@@ -165,13 +165,6 @@ export default function EditProductPage() {
             <button type="submit">edit</button>
           </form>
           <div>
-            <button
-              onClick={() => {
-                setNewPhoto(true);
-              }}
-            >
-              Add Photo
-            </button>
             {newPhoto && (
               <EditNewPhoto
                 productId={productId}
@@ -180,6 +173,7 @@ export default function EditProductPage() {
                 photos={photos}
               />
             )}
+
             <div>
               {photos.map((photo) => {
                 return (
@@ -193,6 +187,13 @@ export default function EditProductPage() {
                 );
               })}
             </div>
+            <button
+              onClick={() => {
+                setNewPhoto(true);
+              }}
+            >
+              Add Photo
+            </button>
           </div>
         </div>
       </main>

@@ -4,11 +4,7 @@ import redImage from "../assets/red.jpg";
 
 const desktopImages = [redImage];
 
-const mobileImages = [
-  "https://placehold.co/300x403",
-  "https://placehold.co/300x404",
-  "https://placehold.co/300x405",
-];
+const mobileImages = [redImage];
 
 export default function Slider() {
   const [index, setIndex] = useState(0);

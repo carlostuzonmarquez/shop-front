@@ -3,6 +3,9 @@ header {
   color: #ffffff;
   padding: 15px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  background-color: rgba(52, 58, 64, 0.4); /* gris oscuro con 80% de opacidad */
 }
 
 nav {

@@ -21,11 +21,19 @@ export default function OrderPage() {
   const handleSubir = () => {
     alert("felicidades has comprado un producto");
   };
+  const volverAtras = () => {
+    window.history.back();
+  };
   return (
     <>
       <MenuHome />
       <div className="idContainer">
         <div className="idCompra">
+          <div style={{ marginLeft: "30px" }}>
+            <a className="return " onClick={volverAtras}>
+              <span>Atras</span>
+            </a>
+          </div>
           <div className="idPersona">
             <form onSubmit={handleSubir}>
               <h1>Identificacion</h1>
@@ -68,8 +76,8 @@ export default function OrderPage() {
                     src={Config.PHOTOS_URL + cart.Photos[0].path}
                     alt="producto"
                   />
-                  <h2>{cart.name}</h2>
-                  <span>{cart.price}Bs.</span>
+                  <h3>{cart.name}</h3>
+                  <h3>Precio : {cart.price}Bs.</h3>
                 </div>
               );
             })}

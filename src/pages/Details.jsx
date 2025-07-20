@@ -12,13 +12,14 @@ export default function Details() {
   const { products } = useContext(ProductsContext);
   const { cart, addToCart, removeProductFromCart } = useCart();
 
-  console.log(details);
   if (!details) {
     return <p>Cargando detalles...</p>;
   }
   const product = products.find((p) => p.id === details.id);
   const isInCart = cart.some((item) => item.id === details.id);
-
+  const volverAtras = () => {
+    window.history.back();
+  };
   return (
     <>
       <MenuHome />
@@ -29,17 +30,19 @@ export default function Details() {
         {/* <!-- Detalles del Producto --> */}
         <div className="product-info">
           <h1>{details.name}</h1>
-          <p className="price">{details.price}bs</p>
-          <p className="description">{details.description}</p>
+          <p className="price">Precio : {details.price}bs</p>
+          <p className="description">detalles : {details.description}</p>
           <div className="categories">
-            <span>Categorías: </span>
-            {details.ProductCategory.map((category) => {
-              return (
-                <div key={category.category.id}>
-                  <a href="">{category.category.name}</a>
-                </div>
-              );
-            })}
+            <p>
+              Categorías:
+              {details.productCategory.map((category) => {
+                return (
+                  <div key={category.category.id}>
+                    <a href="">{category.category.name}</a>
+                  </div>
+                );
+              })}
+            </p>
           </div>
           <button
             className="add-to-cart"
@@ -51,6 +54,11 @@ export default function Details() {
           </button>
         </div>
       </main>
+      <div style={{ marginLeft: "30px" }}>
+        <a className="return " onClick={volverAtras}>
+          <span>Atras</span>
+        </a>
+      </div>
     </>
   );
 }

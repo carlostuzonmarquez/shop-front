@@ -1,55 +1,65 @@
 import { Buscar, MenuIcon, SearchIcon, UserIcon } from "./Icons";
 import "../componentesCSS/Header.css";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import Config from "../Config";
 import { ProductsContext } from "../context/ProductsContext";
 
 export default function MenuHome() {
   const { page, setProducts, setTotalPages } = useContext(ProductsContext);
+
   const [word, setWord] = useState("");
   const [error, setError] = useState("");
-  const [showForm, showFormSet] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [showForm, setShowForm] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 540);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 540);
     };
-  });
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const searchProduct = () => {
-    if (word !== "") {
+    if (word.trim() !== "") {
       axios
-        .get(Config.BACKEND_URL + "search/product/" + page + "/" + word)
+        .get(`${Config.BACKEND_URL}search/product/${page}/${word}`)
         .then((res) => {
           setProducts(res.data.products);
           setTotalPages(res.data.totalPages);
         });
+    } else {
+      setError("No se puede buscar un producto vacío.");
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     searchProduct();
-    // const { query } = Object.fromEntries(new window.FormData(event.target));
   };
 
-  const handleSaveSearch = () => {
-    showFormSet((prev) => !prev);
+  const handleLupaClick = () => {
+    setShowForm((prev) => !prev);
   };
+
   const handleChange = (event) => {
-    let searchWord = event.target.value;
-    if (searchWord === " ") {
-      setError("no se puede buscar el producto");
+    const searchWord = event.target.value;
+    if (searchWord.trim() === "") {
+      setError("No se puede buscar solo espacios.");
+      setWord(searchWord);
       return;
     }
 
-    setError(null);
+    setError("");
     setWord(searchWord);
   };
+
   const volverAtras = () => {
     window.history.back();
   };
+
   return (
     <header>
       <nav>
@@ -58,12 +68,12 @@ export default function MenuHome() {
             Tienda<span>Online</span>
           </a>
         </div>
-        {/* buscadorrr */}
 
         <div className="user-actions">
+          {/* Siempre mostrar la lupa en móviles */}
           {isMobile && (
             <button
-              onClick={handleSaveSearch}
+              onClick={handleLupaClick}
               style={{ background: "none", border: "none", cursor: "pointer" }}
               aria-label="Buscar"
             >
@@ -71,6 +81,7 @@ export default function MenuHome() {
             </button>
           )}
 
+          {/* Mostrar formulario si está activado (móvil) o si no es móvil */}
           {(showForm || !isMobile) && (
             <div className="search-bar">
               <form className="form" onSubmit={handleSubmit}>
@@ -85,16 +96,13 @@ export default function MenuHome() {
                   Buscar
                 </button>
               </form>
+              {error && (
+                <p className="error" style={{ color: "red" }}>
+                  {error}
+                </p>
+              )}
             </div>
           )}
-
-          <div className="acomadar">
-            {error && (
-              <p className="error" style={{ color: "red" }}>
-                {error}
-              </p>
-            )}
-          </div>
         </div>
       </nav>
     </header>
