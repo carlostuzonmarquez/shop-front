@@ -30,13 +30,13 @@ export default function Products() {
                   <img
                     src={Config.PHOTOS_URL + product.Photos[0].path}
                     alt={product.name}
-                    style={{ width: "250px", height: "200px" }}
+                    style={{ width: "100%", height: "200px" }}
                   />
                 )}
               </Link>
               <h3>{product.name}</h3>
-              <p className="price">{product.price}</p>
-              <p className="price">{product.stock}</p>
+              <p className="price">{product.price} bs</p>
+              {/* <p className="price">{product.stock}</p> */}
 
               <p className="categories">
                 {product.productCategory.map((pc) => {
