@@ -16,7 +16,7 @@ export default function CartShop() {
     }, {})
   );
 
-  const updateStock = () => {
+  const   updateStock = () => {
     cart.forEach((item) => {
       axios.patch(Config.BACKEND_URL + "product/edit", {
         id: item.id,
