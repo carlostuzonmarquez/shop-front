@@ -30,7 +30,7 @@ export default function Products() {
                   <img
                     src={Config.PHOTOS_URL + product.Photos[0].path}
                     alt={product.name}
-                    style={{ width: "100%", height: "200px" }}
+                    style={{ width: "250px", height: "250px" }}
                   />
                 )}
               </Link>
